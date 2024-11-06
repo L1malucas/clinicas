@@ -1,0 +1,20 @@
+.menu-header {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0 .5rem 3rem;
+    font-weight: bold;
+    background-color: cadetblue;
+    .menu-icon {
+        margin-right: .4rem;
+        color: #FFF;
+        cursor: pointer;
+    }
+    span {
+        color: #FFF;
+        font-weight: bold;
+    }
+}
+
+.menu-header-nav {
+    margin-left: 200px;
+  }

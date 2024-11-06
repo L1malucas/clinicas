@@ -1,0 +1,368 @@
+<app-menu-header
+  (toggleNavbar)="toggleNavbar()"
+  [isNavbarVisible]="isNavbarVisible"
+></app-menu-header>
+
+@if (isNavbarVisible) {
+<aside class="sidebar">
+  <app-navbar [navBarStyle]="navBarStyle"></app-navbar>
+</aside>
+}
+
+<div class="container">
+  <div class="header">
+    <div class="input-group">
+      <label>SERVIÇO</label>
+      <input type="text" placeholder="Nome do Serviço" />
+    </div>
+    <div class="input-group">
+      <label>DATA DE ABERTURA</label>
+      <input type="date" />
+    </div>
+    <div class="input-group">
+      <label>RENACH</label>
+      <input type="text" placeholder="XXXXXXXXXX" />
+    </div>
+    <div class="input-group">
+      <label>EXAME</label>
+      <input type="text" placeholder="00" />
+    </div>
+    <div class="input-group">
+      <label>CATEGORIAL ATUAL</label>
+      <input type="text" placeholder="Nome completo do paciente" />
+    </div>
+    <div class="input-group">
+      <label>RESTRIÇÕES CNH ANTERIOR</label>
+      <input type="text" placeholder="Nome completo do paciente" />
+    </div>
+    <div class="input-group">
+      <label>NOME DO CANDIDATO</label>
+      <input type="text" placeholder="Nome completo do paciente" />
+    </div>
+    <div class="input-group">
+      <label>DATA NASCIMENTO</label>
+      <input type="date" />
+    </div>
+    <div class="input-group">
+      <label>CPF</label>
+      <input type="text" placeholder="000.000.000-00" />
+    </div>
+    <div class="input-group">
+      <label>CATEGORIA PRETENDIDA</label>
+      <input type="text" placeholder="AB - CAT CARRO E M" />
+    </div>
+    <div class="input-group">
+      <label>ATIVIDADE REMUNERADA</label>
+      <div class="buttons-group">
+        <button
+          [ngClass]="{ active: buttonGroups[0] === 'Sim' }"
+          (click)="toggleButton(0, 'Sim')"
+        >
+          Sim
+        </button>
+        <button
+          [ngClass]="{ active: buttonGroups[0] === 'Não' }"
+          (click)="toggleButton(0, 'Não')"
+        >
+          NÃO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <!-- Seção Acuidade Visual -->
+    <div class="section visual-acuity">
+      <img src="../../../assets/Group (5).png" alt="" class="icon-img" />
+      <h3>ACUIDADE VISUAL</h3>
+      <div class="input-row">
+        <div class="input-label">
+          <label>SEM CORREÇÃO OD</label>
+          <input type="text" placeholder="500" />
+        </div>
+        <div class="input-label">
+          <label>SEM CORREÇÃO OE</label>
+          <input type="text" placeholder="1,00" />
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-label">
+          <label>COM CORREÇÃO OD</label>
+          <input type="text" placeholder="500" />
+        </div>
+        <div class="input-label">
+          <label>COM CORREÇÃO OE</label>
+          <input type="text" placeholder="Nome do Serviço" />
+        </div>
+      </div>
+      <h3>CAMPO DE VISÃO</h3>
+      <div class="input-row">
+        <div class="input-label">
+          <label>OLHO DIREITO</label>
+          <input type="text" placeholder="140" />
+        </div>
+        <div class="input-label">
+          <label>OLHO ESQUERDO</label>
+          <input type="text" placeholder="0" />
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-label">
+          <label>PERIMETRIA ISOPTERA HOR OE</label>
+          <input type="text" placeholder="140" />
+        </div>
+        <div class="input-label">
+          <label>PERIMETRIA ISOPTERA HOR OD</label>
+          <input type="text" placeholder="140" />
+        </div>
+      </div>
+      <div class="input-label">
+        <label>V. BINOCULAR</label>
+        <input type="text" placeholder="0,00" />
+      </div>
+      <div class="input-row-buttons">
+        <div class="input-label">
+          <label>ESTRABISMO</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[2] === 'Sim' }"
+              (click)="toggleButton(2, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[2] === 'Não' }"
+              (click)="toggleButton(2, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+        <div class="input-label">
+          <label>DALTÔNICO</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[3] === 'Sim' }"
+              (click)="toggleButton(3, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[3] === 'Não' }"
+              (click)="toggleButton(3, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="input-row-buttons">
+        <div class="input-label">
+          <label>V.CROMÁTICA</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[4] === 'Sim' }"
+              (click)="toggleButton(4, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[4] === 'Não' }"
+              (click)="toggleButton(4, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+        <div class="input-label">
+          <label>PERCEPÇÃO LUMINOSA</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[5] === 'Sim' }"
+              (click)="toggleButton(5, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[5] === 'Não' }"
+              (click)="toggleButton(5, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="input-row-buttons">
+        <div class="input-label">
+          <label>V. ESTEREOSCOPIA</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[6] === 'Sim' }"
+              (click)="toggleButton(6, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[6] === 'Não' }"
+              (click)="toggleButton(6, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+        <div class="input-label">
+          <label>OFUSCAMENTO | V. NOTURNA</label>
+          <div class="section-buttons">
+            <button
+              class="sim"
+              [ngClass]="{ active: buttonGroups[7] === 'Sim' }"
+              (click)="toggleButton(7, 'Sim')"
+            >
+              SIM
+            </button>
+            <button
+              class="nao"
+              [ngClass]="{ active: buttonGroups[7] === 'Não' }"
+              (click)="toggleButton(7, 'Não')"
+            >
+              NÃO
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção Avaliações Médicas -->
+    <div class="section-column">
+      <div class="div-avaliacoes">
+        <img
+          src="../../../assets/Group 632.png"
+          class="icon-img"
+          alt="Otorrinolaringologista"
+        />
+        <h3>OTORRINOLARINGOLOGISTA</h3>
+        <input class="field-input" placeholder="Sem alteração" />
+      </div>
+      <div class="div-avaliacoes">
+        <img src="../../../assets/Group.png" alt="" class="icon-img" />
+        <h3>AVALIAÇÃO NEUROLÓGICA</h3>
+        <input class="field-input" placeholder="Sem alteração" />
+      </div>
+      <div class="div-avaliacoes">
+        <img src="../../../assets/Group 635.png" alt="" class="icon-img" />
+        <h3>DISTÚRBIO DO SONO</h3>
+        <input class="field-input" placeholder="Sem alteração" />
+      </div>
+      <div class="restricoes">RESTRIÇÕES</div>
+    </div>
+
+    <!-- Seção Avaliação Física -->
+    <div class="section-column">
+      <div class="forca-manual">
+        <img src="../../../assets/Group (1).png" alt="" class="icon-img" />
+        <h3>AVALIAÇÃO FORÇA MANUAL</h3>
+        <input class="field-input" placeholder="Campo para preenchimento" />
+        <div class="row-forca-manual">
+          <div class="input-label">
+            <label>FORÇA MANUAL D</label>
+            <input type="text" placeholder="00" class="input-small" />
+          </div>
+          <div class="input-label">
+            <label>FORÇA MANUAL E</label>
+            <input type="text" placeholder="00" class="input-small" />
+          </div>
+        </div>
+      </div>
+      <div class="forca-manual">
+        <img src="../../../assets/Group (2).png" alt="" class="icon-img" />
+        <h3>PRESSÃO ARTERIAL</h3>
+        <div class="input-label">
+          <label>FREQUÊNCIA CARDÍACA</label>
+          <input type="text" placeholder="00" class="input-small" />
+        </div>
+        <h3 style="margin-top: 0.8rem">AVALIAÇÃO CARIORESPIRATORIA</h3>
+        <input class="field-input" placeholder="Campo para preenchimento" />
+      </div>
+    </div>
+
+    <!-- Seção Informações Adicionais -->
+    <div class="section-column-data">
+      <div class="data">
+        <img src="../../../assets/Group (3).png" alt="" class="icon-img" />
+        <div class="row-data">
+          <div class="input-label">
+            <h5>DATA DA REALIZAÇÃO</h5>
+            <input type="date" />
+          </div>
+          <div class="input-label">
+            <h5>DATA DE VALIDADE</h5>
+            <input type="date" />
+          </div>
+        </div>
+      </div>
+
+      <div class="section-pericia">
+        <h5>NECESSIDADE PERÍCIA ESPECIAL</h5>
+        <div class="section-button-especial">
+          <button
+            class="sim"
+            [ngClass]="{ active: buttonGroups[8] === 'Sim' }"
+            (click)="toggleButton(8, 'Sim')"
+          >
+            SIM
+          </button>
+          <button
+            class="nao"
+            [ngClass]="{ active: buttonGroups[8] === 'Não' }"
+            (click)="toggleButton(8, 'Não')"
+          >
+            NÃO
+          </button>
+        </div>
+      </div>
+
+      <div class="observacoes-medicas">
+        <img src="../../../assets/Group 779.png" alt="" class="icon-img" />
+        <h5>OBSERVAÇÕES MÉDICAS</h5>
+        <input
+          type="text"
+          placeholder="Campo para preenchimento"
+          class="field-input"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="input-label">
+      <label>CATEGORIA AUTORIZADA</label>
+      <input type="text" placeholder="AB - CAT CARRO E M" class="input-small" />
+    </div>
+    <div class="input-group" style="width: 260px">
+      <label>RESULTADO DO EXAME</label>
+      <select>
+        <option value="APTO">APTO</option>
+        <option value="APTO">APTO COM RESTRIÇÃO</option>
+        <option value="APTO">INAPTO</option>
+        <option value="APTO">INAPTO TEMPORÁRIO</option>
+      </select>
+    </div>
+    <div class="input-label">
+      <label>DATA DE RETORNO</label>
+      <input type="date" placeholder="00" class="input-small" />
+    </div>
+    <button class="sair" (click)="backToHome()">SAIR</button>
+    <button class="transmitir">TRANSMITIR</button>
+    <button class="fechar" (click)="backToHome()">FECHAR</button>
+  </div>
+</div>

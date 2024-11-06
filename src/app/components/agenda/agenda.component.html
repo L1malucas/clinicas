@@ -1,0 +1,158 @@
+<div class="app-agenda">
+  <app-navbar></app-navbar>
+  <div class="section-container">
+    <div class="section-input">
+      <div class="input-group">
+        <label>SERVIÇO</label>
+        <input type="text" placeholder="NOME DO SERVIÇO" />
+      </div>
+      <div class="input-group">
+        <label>DATA DE ABERTURA</label>
+        <input type="date" placeholder="XX/XX/XXXX" />
+      </div>
+      <div class="input-group">
+        <label>RENACH</label>
+        <input type="text" placeholder="XXXXXXXXXX" />
+      </div>
+      <div class="input-group">
+        <label>IDADE</label>
+        <input type="text" placeholder="00" />
+      </div>
+      <div class="input-group">
+        <label>CATEGORIAL ATUAL</label>
+        <input type="text" placeholder="A-CAT MOTO" />
+      </div>
+      <div class="input-group">
+        <label style="white-space: nowrap">RESTRIÇÕES CNH ANTERIOR</label>
+        <input type="text" placeholder="CAMPO PARA PREENCHIMENTO" />
+      </div>
+    </div>
+
+    <div class="section-input">
+      <div class="input-group">
+        <label>NOME DO CANDIDATO</label>
+        <input type="text" placeholder="NOME COMPLETOD DO PACIENTE" />
+      </div>
+      <div class="input-group">
+        <label>DATA NASCIMENTO</label>
+        <input type="date" />
+      </div>
+      <div class="input-group">
+        <label>CPF</label>
+        <input type="text" placeholder="000.000.000-00" />
+      </div>
+      <div class="input-group">
+        <label>CATEGORIA PRETENDIDA</label>
+        <input type="text" placeholder="AB - CAT CARRO E M" />
+      </div>
+      <div class="input-group">
+        <label>ATIVIDADE REMUNERADA</label>
+        <div class="buttons-group">
+          <button
+            [ngClass]="{ active: buttonGroups[0] === 'Sim' }"
+            (click)="toggleButton(0, 'Sim')"
+          >
+            Sim
+          </button>
+          <button
+            [ngClass]="{ active: buttonGroups[0] === 'Não' }"
+            (click)="toggleButton(0, 'Não')"
+          >
+            Não
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-input" style="margin-top: 4rem">
+      <div class="input-group" style="width: 300px">
+        <label>SERVIÇO</label>
+        <input type="text" placeholder="NOME DO SERVIÇO" />
+      </div>
+      <div class="input-group">
+        <label>DATA DA REALIZAÇÃO</label>
+        <input type="date" placeholder="XX/XX/XXXX" />
+      </div>
+      <div class="input-group">
+        <label>DATA DA VALIDADE</label>
+        <input type="date" />
+      </div>
+      <div class="input-group" style="width: 500px">
+        <label>OBSERVAÇÕES</label>
+        <input type="text" placeholder="CAMPO PARA PREENCHIMENTO" />
+      </div>
+    </div>
+    <div class="section-input">
+      <div class="input-group" style="width: 260px">
+        <label>RESULTADO DO EXAME</label>
+        <select>
+          <option value="APTO">APTO</option>
+          <option value="APTO">APTO COM RESTRIÇÃO</option>
+          <option value="APTO">INAPTO</option>
+          <option value="APTO">INAPTO TEMPORÁRIO</option>
+        </select>
+      </div>
+      <div class="input-group" style="width: 260px">
+        <label>CATEGORIA AUTORIZADA</label>
+        <select>
+          <option value="" disabled selected hidden>
+            SELECIONE UMA CATEGORIA
+          </option>
+          <option value="APTO">ACC - CAT CICLOMOTOR</option>
+          <option value="APTO">A - CAT MOTO</option>
+          <option value="APTO">B - CAT CARRO</option>
+          <option value="APTO">C - CAT CAMINHÃO</option>
+          <option value="APTO">D - CAT ÔNIBUS</option>
+          <option value="APTO">E - CAT CARRETA</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>DIAS P/ NOVA PERÍCIA</label>
+        <input type="text" placeholder="00" />
+      </div>
+      <div class="input-group">
+        <label>ATIVIDADE REMUNERADA</label>
+        <div class="buttons-group">
+          <button
+            [ngClass]="{ active: buttonGroups[1] === 'Sim' }"
+            (click)="toggleButton(1, 'Sim')"
+          >
+            Sim
+          </button>
+          <button
+            [ngClass]="{ active: buttonGroups[1] === 'Não' }"
+            (click)="toggleButton(1, 'Não')"
+          >
+            Não
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="reconhecimento-biometrico">
+      <h4>RECONHECIMENTO BIOMÉTRICO / FACIAL</h4>
+      <div class="section-row-radio">
+        <div class="div-radio">
+          <input type="radio" />
+          <span>VALIDAÇÃO FACIAL</span>
+        </div>
+        <div class="div-radio">
+          <input type="radio" />
+          <span>VALIDAÇÃO FACIAL</span>
+        </div>
+      </div>
+      <div class="button-group">
+        <button class="psicologo">PSICÓLOGO</button>
+        <button class="candidato">CANDIDATO</button>
+      </div>
+    </div> -->
+
+    <div class="footer">
+      <button class="sair" (click)="backToHome()">SAIR</button>
+      <button class="salvar">SALVAR</button>
+      <button class="finalizar" (click)="backToHome()">
+        FINALIZAR ATENDIMENTO
+      </button>
+    </div>
+  </div>
+</div>
